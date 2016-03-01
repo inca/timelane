@@ -1,6 +1,6 @@
 {
   "name": "timelane",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tiny helper to track timeline of events and processes",
   "main": "index.js",
   "scripts": {
