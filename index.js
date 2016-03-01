@@ -50,6 +50,7 @@ const Timeline = Object.freeze({
             'duration'
         ].reduce((obj, key) => {
             obj[key] = this[key]
+            return obj;
         }, {});
     }
 
