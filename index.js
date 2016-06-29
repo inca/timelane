@@ -19,9 +19,15 @@ const Timeline = Object.freeze({
         this.startedAt = Date.now();
     },
 
-    finish() {
+    finish(params) {
         this.finishedAt = Date.now();
         this._evalDuration();
+
+        if (params && typeof params.metadata === 'string') {
+            this.metadata = params.metadata;
+        } else if (params && params.metadata) {
+            throw new Error('Only string allowed as metadata');
+        }
     },
 
     timeout() {
@@ -47,9 +53,13 @@ const Timeline = Object.freeze({
             'startedAt',
             'finishedAt',
             'timeoutAt',
-            'duration'
+            'duration',
+            'metadata'
         ].reduce((obj, key) => {
-            obj[key] = this[key];
+            const val = this[key];
+            if (typeof val !== 'undefined') {
+                obj[key] = val;
+            }
             return obj;
         }, {});
     }

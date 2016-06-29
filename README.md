@@ -14,7 +14,7 @@ const timelines = {
 Promise.resolve()
     .then(() => timelines.sleep.start())
     .then(() => ...)
-    .then(() => timelines.sleep.finish())
+    .then(() => timelines.sleep.finish({ metadata: 'moon was full' }))
     .then(() => timelines.awake.start())
     ...
     .then(() => timelines.awake.finish());
