@@ -54,5 +54,14 @@
     "no-empty-pattern": 2,
     "no-undef": 2,
     "yoda": [2, "never", { "exceptRange": true }]
+  },
+  "globals": {
+    "it": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "context": true,
+    "describe": true
   }
 }
